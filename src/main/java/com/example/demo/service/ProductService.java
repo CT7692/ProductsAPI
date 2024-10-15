@@ -5,7 +5,7 @@ import com.example.demo.entity.Product;
 import java.util.List;
 
 public interface ProductService {
-    List<Product> getProductByCategoryID(Long categoryID);
+    List<Product> getProducts();
     Product addProduct(Long categoryID, Product newProduct);
     Product updateProduct(Long categoryID, Long productID, Product updateProduct);
     void deleteProduct(Long categoryID, Long productID);

@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Product;
-import com.example.demo.payload.Response;
 import com.example.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,7 +27,7 @@ public class ProductController {
     @GetMapping("/{categoryID}/products")
     public ResponseEntity<List<Product>> getProductsByCategoryID(@PathVariable("categoryID") Long categoryID) {
 
-        List<Product> products = productService.getProductByCategoryID(categoryID);
+        List<Product> products = productService.getProducts();
 
         return ResponseEntity.ok(products);
     }

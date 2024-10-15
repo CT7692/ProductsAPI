@@ -12,26 +12,19 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(
-        name = "products",
-        uniqueConstraints = {
-                @UniqueConstraint(
-                        columnNames = {"Category Name"}
-                )
-        }
-)
 public class Category {
     @Id
     @GeneratedValue(
             strategy = GenerationType.IDENTITY
     )
+    @Column(name = "category_id")
     private Long id;
 
-    @Column(name = "Category Name", nullable = false)
+    @Column(nullable = false)
     private String name;
 
     @OneToMany(
-            mappedBy = "product",
+            mappedBy = "category",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
